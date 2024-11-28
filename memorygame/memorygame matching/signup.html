@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #0f2862, #2b4d8f);
+            background-size: 200% 200%;
+            animation: gradientAnimation 6s infinite alternate;
+            color: #ffffff;
+            background-image: url(https://assetstorev1-prd-cdn.unity3d.com/key-image/0055addc-aa9b-4556-9aa7-f58f29420c93.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #0f2862;
+            font-weight: 600;
+            font-size: 1.8em;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            color: #333333;
+
+            font-weight: 500;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #0f2862;
+            box-shadow: 0 0 5px rgba(15, 40, 98, 0.3);
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin: -10px 0 15px;
+        }
+
+        .btn {
+            background-color: #0f2862;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1em;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #2b4d8f;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .alternate {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #0f2862;
+        }
+
+        .alternate a {
+            color: #0f2862;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .alternate a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .card {
+                padding: 30px;
+                max-width: 90%;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            .input-group input {
+                padding: 10px;
+            }
+
+            .btn {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 20px;
+                max-width: 90%; 
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            .input-group input {
+                padding: 8px;
+            }
+
+            .btn {
+                padding: 8px;
+            }
+
+            .alternate {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .card {
+                max-width: 70%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>SignUp</h2>
+        <form id="signupForm">
+            <div class="input-group">
+                <label for="username"><strong>Username</strong></label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email"><strong>Email</strong></label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password"><strong>Password</strong></label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <p id="signupError" class="error-message"></p>
+            <button type="submit" class="btn">Signup</button>
+        </form>
+
+        <p class="alternate">
+            <b>Already have an account ?</b> <a href="./login.html"> Login here</a>.
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const errorEl = document.getElementById('signupError');
+
+            if (!username || !email || !password) {
+                errorEl.textContent = 'All fields are required!';
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errorEl.textContent = 'Please enter a valid email!';
+                return;
+            }
+
+            localStorage.setItem('storedUsername', username);
+            localStorage.setItem('storedEmail', email);
+            localStorage.setItem('storedPassword', password);
+
+            alert('Signup successful! You can now log in.');
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+    
+</html>

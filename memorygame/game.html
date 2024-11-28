@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="./gamess.css">
+</head>
+<body>
+    
+    <div class="auth-container" id="signupSection">
+        <h1>Sign Up</h1>
+        <form id="signupForm">
+            <input type="text" id="signupUsername" placeholder="Enter Name" required>
+            <!-- <small id="signupUsernameError" class="error"></small> -->
+            <input type="email" id="signupEmail" placeholder="Enter Email" required>
+            <!-- <small id="signupEmailError" class="error"></small> -->
+            <input type="password" id="signupPassword" placeholder="Enter Password" required>
+            <!-- <small id="signupPasswordError" class="error"></small> -->
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <div class="auth-container hidden" id="loginSection">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="text" id="loginUsername" placeholder="Enter Name" required>
+            <!-- <small id="loginUsernameError" class="error"></small> -->
+            <input type="email" id="loginEmail" placeholder="Enter Email" required>
+            <!-- <small id="loginEmailError" class="error"></small> -->
+            <input type="password" id="loginPassword" placeholder="Enter Password" required>
+            <!-- <small id="loginPasswordError" class="error"></small> -->
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div id="gameScreen" class="hidden">
+        <h1>Memory Matching Game</h1>
+        <p>Score: <span id="score">0</span></p>
+        <!-- <p>Time Left: <span id="timer">60</span>s</p> -->
+        <div class="game-board" id="gameBoard"></div>
+    </div>
+
+    <div id="giftSection" class="hidden">
+        <h1>Congratulations!</h1>
+        <p>You have earned a gift card for this level!</p>
+        <img id="giftImage" src="https://www.legionhealth.co.za/cdn/shop/products/giftcard.jpg?v=1588691980&width=533" alt="Gift Card" />
+        <!-- <button id="nextLevelBtn">Next Level</button> -->
+    </div>
+
+    <audio id="welcomeAudio" src="./welcome.mp3"></audio>
+    <audio id="matchAudio" src="./matched.mp3"></audio>
+    <audio id="noMatchAudio" src="./not matched fun.mp3"></audio>
+    <audio id="giftAudio" src="./giftcard.mp3"></audio>
+
+    <script src="./game.js"></script>
+</body>
+</html>
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+

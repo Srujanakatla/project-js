@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-Minute Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .timer {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 1.5em;
+            color: #333;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="timer" id="timer">01:00</div>
+
+    <script>
+        let remainingTime = 60; 
+
+        const timerDisplay = document.getElementById('timer');
+
+        function updateTimerDisplay() {
+            const minutes = String(Math.floor(remainingTime / 60)).padStart(2, '0');
+            const seconds = String(remainingTime % 60).padStart(2, '0');
+            timerDisplay.textContent = `${minutes}:${seconds}`; 
+        }
+
+        function startCountdown() {
+            const timerInterval = setInterval(() => {
+                if (remainingTime <= 0) {
+                    clearInterval(timerInterval);
+                    alert("Time's up!");
+                } else {
+                    remainingTime--;
+                    updateTimerDisplay();
+                }
+            }, 1000);
+        }
+        updateTimerDisplay();
+        startCountdown();
+    </script>
+</body>
+</html>
