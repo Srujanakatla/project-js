@@ -1,0 +1,338 @@
+/* /* 
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .card {
+        width: 60px;
+        height: 80px;
+        font-size: 16px;
+    }
+
+    #giftSection img, #completionPopup img {
+        width: 150px;
+    }
+
+    #giftSection h1, #completionPopup h1 {
+        font-size: 18px;
+    }
+}
+
+/* Tablets */
+/* @media screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .card {
+        width: 70px;
+        height: 90px;
+    }
+}
+
+/* Laptops 
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .card {
+        width: 80px;
+        height: 100px;
+    }
+}
+
+/* Popup Styles 
+#completionPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    z-index: 1000;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#completionPopup img {
+    width: 200px;
+    margin: 20px 0;
+}
+
+#completionPopup button {
+    padding: 10px 20px;
+    background: gold;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} */ 
+
+/* Completion Popup Styling 
+#completionPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 90%;
+    max-width: 400px;
+    background: url('https://thumbs.dreamstime.com/z/invitation-card-gift-card-design-decorative-background-elegant-bow-ornate-floral-border-luxury-background-space-82974213.jpg') no-repeat center center/cover;
+    background: linear-gradient(135deg, #ffcc00, #ff9900);
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 20px;
+    z-index: 1000;
+    animation: popupIn 0.6s ease forwards;
+}
+
+/* Popup Header 
+#completionPopup h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Popup Paragraph 
+#completionPopup p {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+/* Popup Image 
+#completionPopup img {
+    width: 80%;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Popup Button 
+#completionPopup button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #004d99;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.2s;
+}
+
+#completionPopup button:hover {
+    background: #007acc;
+    transform: scale(1.05);
+}
+
+#completionPopup button:active {
+    transform: scale(0.95);
+}
+
+/* Popup Animation 
+@keyframes popupIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Popup Blur Effect 
+body.popup-active {
+    filter: blur(3px);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Additional Media Query for Smaller Devices 
+@media screen and (max-width: 768px) {
+    #completionPopup {
+        width: 95%;
+        max-width: 320px;
+    }
+
+    #completionPopup h1 {
+        font-size: 20px;
+    }
+
+    #completionPopup p {
+        font-size: 16px;
+    }
+
+    #completionPopup img {
+        width: 70%;
+    }
+
+    #completionPopup button {
+        font-size: 14px;
+    }
+}
+ */
+
+ /* Completion Popup Styling with Background Image */
+#completionPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 90%;
+    max-width: 400px;
+    background: url('https://thumbs.dreamstime.com/z/invitation-card-gift-card-design-decorative-background-elegant-bow-ornate-floral-border-luxury-background-space-82974213.jpg') no-repeat center center/cover;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 20px;
+    z-index: 1000;
+    animation: popupIn 0.6s ease forwards;
+}
+
+/* Overlay Effect for Text Readability */
+#completionPopup::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text visibility */
+    border-radius: 15px;
+    z-index: 1;
+}
+
+/* Content inside the popup */
+#completionPopup h1,
+#completionPopup p,
+#completionPopup img,
+#completionPopup button {
+    position: relative;
+    z-index: 2;
+}
+
+/* Popup Header */
+#completionPopup h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Popup Paragraph */
+#completionPopup p {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+/* Popup Image */
+#completionPopup img {
+    width: 80%;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Popup Button */
+#completionPopup button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #004d99;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.2s;
+}
+
+#completionPopup button:hover {
+    background: #007acc;
+    transform: scale(1.05);
+}
+
+#completionPopup button:active {
+    transform: scale(0.95);
+}
+
+/* Popup Animation */
+@keyframes popupIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Popup Blur Effect */
+body.popup-active {
+    filter: blur(3px);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Additional Media Query for Smaller Devices */
+@media screen and (max-width: 768px) {
+    #completionPopup {
+        width: 95%;
+        max-width: 320px;
+    }
+
+    #completionPopup h1 {
+        font-size: 20px;
+    }
+
+    #completionPopup p {
+        font-size: 16px;
+    }
+
+    #completionPopup img {
+        width: 70%;
+    }
+
+    #completionPopup button {
+        font-size: 14px;
+    }
+}
