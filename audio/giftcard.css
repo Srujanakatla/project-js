@@ -19,17 +19,17 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1; /* Place video behind the content */
+    z-index: -1; 
   }
   
   .card {
-    background: rgba(255, 255, 255, 0.9); /* Transparent white */
+    background: rgba(255, 255, 255, 0.9); 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 20px;
     width: 300px;
-    z-index: 1; /* Ensure it stays above the video */
+    z-index: 1; 
   }
   
   .gift-card-image {
@@ -84,6 +84,7 @@
       opacity: 1;
     }
   }
+
 #enhanced-button {
   position: relative;
   padding: 1rem 2rem;
@@ -130,8 +131,6 @@
   }
 }
   
- 
-
   /* For tablets (screens up to 768px) */
 @media screen and (max-width: 768px) {
   body {
