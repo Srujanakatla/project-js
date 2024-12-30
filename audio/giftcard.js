@@ -1,4 +1,4 @@
-document.getElementById("redeemButton").addEventListener("click", function () {
+document.getElementById("enhanced-button").addEventListener("click", function () {
     const congratsMessage = document.getElementById("congratsMessage");
     const congratsAudio = document.getElementById("congratsAudio");
   
