@@ -11,7 +11,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     // Name validation
     const name = document.getElementById('name').value.trim();
     if (!/^[a-z]+$/.test(name)) {
-        alert('Name must start with an uppercase letter.');
+        alert('Name must start with an letter.');
         return;
     }
 
