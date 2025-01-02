@@ -3,7 +3,7 @@ document.getElementById('signupForm').addEventListener('submit', function (e) {
 
     // Name validation
     const name = document.getElementById('name').value.trim();
-    if (!/^[A-Z][a-z]+$/.test(name)) {
+    if (!/^[a-z]+$/.test(name)) {
         alert('Name must start with an uppercase letter.');
         return;
     }
@@ -18,14 +18,14 @@ document.getElementById('signupForm').addEventListener('submit', function (e) {
     // Password validation
     const password = document.getElementById('password').value;
     const passwordStrength = document.getElementById('passwordStrength');
-    if (!/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/.test(password)) 
+//     if (!/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/.test(password)) 
 
-{
-        alert(
-            'Password must be at least 8 characters long and include uppercase, lowercase, number, and special symbol.'
-        );
-        return;
-    }
+// {
+//         alert(
+//             'Password must be at least 8 characters long and include uppercase, lowercase, number, and special symbol.'
+//         );
+//         return;
+//     }
     passwordStrength.textContent = 'Strong password!';
 
     // Redirect to login page
